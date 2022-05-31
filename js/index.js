@@ -5,15 +5,15 @@ let products_section=document.querySelector(".products_section")
 function show_products(data){
   let data_fetched =data.map((product) =>{
       const { id } = product;
-      const { name: title, price } = product.fields;
-      const { url: img } = product.fields.image[0];
-      const formatPrice = price / 100;
+      const { name, price } = product.fields;
+      const { url } = product.fields.image[0];
+      
       // id,name,price,img
       return `<div class="product" >
-            <a class="link mb-3" href="product.html?id=${id}"><img src="${img}" class="product_image mb-3 " alt="${title}" /></a>
+            <a class="link mb-3" href="product.html?id=${id}"><img src="${url}" class="product_image mb-3 " alt="${name}" /></a>
             <footer>
-              <h5 class="name text-center mb-2">${title}</h5>
-              <h5 class="price text-center">$${formatPrice}</h5>
+              <h5 class="name text-center mb-2">${name}</h5>
+              <h5 class="price text-center">$${price}</h5>
             </footer>
           </div>`;
     }

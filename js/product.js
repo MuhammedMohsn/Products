@@ -5,19 +5,19 @@ function show_product_info(data) {
       company,
       colors,
       description,
-      name: title,
+      name,
       price,
       image,
   } = data.fields;
-  const { url: img } = image[0];
-  document.title = title.toUpperCase();
+  const { url} = image[0];
+  document.title = name.toUpperCase();
 
 single_product.innerHTML = `
-      <img src="${img}" class="img" alt="${title}" />
+      <img src="${url}" class="img" alt="${name}" />
       <div class="product_info">
-        <h1 class="mb-3">${title}</h1>
+        <h1 class="mb-3">${name}</h1>
         <h4 class="mb-3">${company}</h4>
-        <span>${price / 100}</span>
+        <span>${price }</span>
         
         <p class="mb-3">
          ${description}
