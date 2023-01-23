@@ -8,7 +8,6 @@ function show_products(data){
       const { name, price } = product.fields;
       const { url } = product.fields.image[0];
       
-      // id,name,price,img
       return `<div class="product" >
             <a class="link mb-3" href="product.html?id=${id}"><img src="${url}" class="product_image mb-3 " alt="${name}" /></a>
             <footer>
